@@ -242,6 +242,6 @@ export const languages: SupportLanguage[] = [
     name: "AsciiDoc",
     parsers: [PLUGIN_KEY],
     extensions: [".adoc"],
-    vscodeLanguageIds: ["adoc"],
+    vscodeLanguageIds: ["adoc", "asciidoc"],
   },
 ];
