@@ -1,0 +1,6 @@
+[positional_attribute_1,positional_attribute_2,named_attribute=value]
+I am a paragraph.
+
+[named_attributes="value hey"]
+A paragraph consists of multiple lines without an empty line.
+A paragraph consists of multiple lines without an empty line.

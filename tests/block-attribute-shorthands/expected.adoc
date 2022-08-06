@@ -1,0 +1,6 @@
+[rounded#myid.role1.role2%opt1%opt2]
+I am a paragraph.
+
+[rounded#mxid.role1.role2%opt1%opt2]
+A paragraph consists of multiple lines without an empty line.
+A paragraph consists of multiple lines without an empty line.
