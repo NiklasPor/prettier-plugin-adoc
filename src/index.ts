@@ -9,7 +9,7 @@ import {
 import { AdocNode, AttributeNode, TextNode } from "./parser/nodes";
 import { parse } from "./parser/parse";
 
-export const PLUGIN_KEY = "adoc";
+export const PLUGIN_KEY = "asciidoc";
 
 interface AdocParserOptions {
   adocLiteralParagraphSpaces: number;

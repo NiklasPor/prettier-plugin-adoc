@@ -1,7 +1,7 @@
 import { existsSync, readdirSync, readFileSync } from "fs";
 import { join } from "path";
 import * as prettier from "prettier";
-import * as AdocPlugin from "./prettier-plugin";
+import * as AdocPlugin from "./index";
 
 const prettify = (
   code: string,

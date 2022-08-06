@@ -9,5 +9,5 @@
     "target": "es2015",
     "strict": true
   },
-  "files": ["./src/prettier-plugin.ts"]
+  "files": ["src/index.ts"]
 }

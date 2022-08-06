@@ -1,8 +1,8 @@
 {
   "name": "prettier-plugin-asciidoc",
-  "version": "0.0.1-prerelease-0",
+  "version": "0.0.1-prerelease-1",
   "description": "Format AsciiDoc files with prettier 📖",
-  "main": "prettier-plugin.js",
+  "main": "index",
   "scripts": {
     "test:local": "pnpm jest --watch",
     "test:coverage": "pnpm jest --collect-coverage",
