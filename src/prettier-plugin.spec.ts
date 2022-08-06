@@ -8,12 +8,12 @@ const prettify = (
   options: AdocPlugin.PrettierAdocParserOptions
 ) =>
   prettier.format(code, {
+    ...options,
     parser: AdocPlugin.PLUGIN_KEY,
     plugins: [AdocPlugin],
-    ...options,
   });
 
-const testFolder = join(__dirname, "tests");
+const testFolder = join(__dirname, "../tests");
 const tests = readdirSync(testFolder);
 
 tests.forEach((test) =>

@@ -65,7 +65,7 @@ class CSTVisitor implements Record<CSTRule, (node: CstNode) => AdocNode> {
     return {
       type: "attributeBlock",
       location: this.location(node),
-      list: this.AttributeList(this.getNode(node, Rules.AttributeList)),
+      list: this.AttributeList(this.getNode(node, Rules.AttributeList)!),
     };
   }
 
@@ -75,7 +75,7 @@ class CSTVisitor implements Record<CSTRule, (node: CstNode) => AdocNode> {
       type: "attributeNode",
       location: this.location(node),
       key: this.getToken(node, AttributeInlineText)?.image,
-      value: this.AttributeValue(valueNode),
+      value: this.AttributeValue(valueNode!),
     };
   }
 

@@ -34,7 +34,7 @@ const parser: Parser<AdocNode> = {
 };
 
 const printer: Printer<AdocNode> = {
-  print: (path, options, print, args?) => {
+  print: (path, options, print, args?): doc.builders.Doc => {
     const {
       adocLiteralParagraphSpaces,
       adocAlwaysQuoteAttributeValues,
@@ -147,7 +147,7 @@ function printAttributeFormal(
 function printAttributeShorthand(
   node: AttributeNode,
   shorthandSymbol: string
-): string | undefined {
+): string {
   return node.value.values
     .map((value) => `${shorthandSymbol}${value}`)
     .join("");

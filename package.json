@@ -1,11 +1,12 @@
 {
   "name": "prettier-plugin-adoc",
-  "version": "alpha-0",
+  "version": "0.0.1-prerelease-0",
   "description": "Format AsciiDoc files with prettier 📖",
   "main": "index.js",
   "scripts": {
     "test:local": "pnpm jest --watch",
-    "test:coverage": "pnpm jest --collect-coverage"
+    "test:coverage": "pnpm jest --collect-coverage",
+    "build": "rm -rf lib && pnpm tsc && cp package.json lib/package.json"
   },
   "keywords": [
     "AsciiDoc",
