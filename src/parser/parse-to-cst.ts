@@ -8,6 +8,8 @@ import {
   AttributeListStart,
   AttributeOptionShorthand,
   AttributeRoleShorthand,
+  LegacyIdEnd,
+  LegacyIdStart,
 } from "./lexer/attribute-list-tokens";
 import {
   Assignment,
@@ -94,6 +96,13 @@ class AdocParser extends CstParser {
     Rules.AttributeEntryShorthand,
     () => {
       this.OR([
+        {
+          ALT: () => {
+            this.CONSUME1(LegacyIdStart);
+            this.CONSUME2(AttributeInlineText);
+            this.CONSUME1(LegacyIdEnd);
+          },
+        },
         {
           ALT: () =>
             this.AT_LEAST_ONE(() => {

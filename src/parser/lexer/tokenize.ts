@@ -3,6 +3,8 @@ import {
   AttributeListMode,
   AttributeListStart,
   AttributeListTokens,
+  LegacyIdMode,
+  LegacyIdTokens,
 } from "./attribute-list-tokens";
 
 import {
@@ -28,6 +30,7 @@ const rootTokens = [
 const modes: MultiModesDefinition = {
   root: rootTokens,
   [AttributeListMode]: AttributeListTokens,
+  [LegacyIdMode]: LegacyIdTokens,
   [StringMode]: StringTokens,
 };
 const lexer = new Lexer(

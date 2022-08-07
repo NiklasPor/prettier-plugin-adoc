@@ -18,6 +18,7 @@ import {
   AttributeInlineText,
   AttributeOptionShorthand,
   AttributeRoleShorthand,
+  LegacyIdStart,
 } from "./lexer/attribute-list-tokens";
 import { StringText } from "./lexer/string-tokens";
 
@@ -82,6 +83,7 @@ class CSTVisitor implements Record<CSTRule, (node: CstNode) => AdocNode> {
   [Rules.AttributeEntryShorthand](node: CstNode): AttributeNode {
     const key =
       (this.getToken(node, AttributeIdShorthand) && "id") ??
+      (this.getToken(node, LegacyIdStart) && "id") ??
       (this.getToken(node, AttributeOptionShorthand) && "option") ??
       (this.getToken(node, AttributeRoleShorthand) && "role");
 

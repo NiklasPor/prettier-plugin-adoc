@@ -1,13 +1,26 @@
 import { createToken } from "chevrotain";
-import { Assignment, Comma, InlineText } from "./shared-token";
+import { Assignment, Comma } from "./shared-token";
 import { StringStart } from "./string-tokens";
 
 export const AttributeListMode = "AttributeListMode";
+export const LegacyIdMode = "LegacyIdMode";
 
 export const AttributeListStart = createToken({
   name: "AttributeListStart",
   pattern: /\[(?=.*?\])/,
   push_mode: AttributeListMode,
+});
+
+export const LegacyIdStart = createToken({
+  name: "LegacyIdStart",
+  pattern: /\[(?=.*?\])/,
+  push_mode: LegacyIdMode,
+});
+
+export const LegacyIdEnd = createToken({
+  name: "LegacyIdEnd",
+  pattern: /\]/,
+  pop_mode: true,
 });
 
 export const AttributeListEnd = createToken({
@@ -38,6 +51,7 @@ export const AttributeIdShorthand = createToken({
 
 export const AttributeListTokens = [
   AttributeListEnd,
+  LegacyIdStart,
   Comma,
   StringStart,
   Assignment,
@@ -46,3 +60,5 @@ export const AttributeListTokens = [
   AttributeRoleShorthand,
   AttributeInlineText,
 ];
+
+export const LegacyIdTokens = [LegacyIdEnd, AttributeInlineText];
